@@ -24,18 +24,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ÑİÊ¾Ê¹ÓÃÒıµ¼½çÃæ;
+ * æ¼”ç¤ºä½¿ç”¨å¼•å¯¼ç•Œé¢;
  * */
 public class MainActivity extends Activity {
 
-    //ÊÇ·ñÏÔÊ¾Òıµ¼½çÃæ£¬µÚÒ»´ÎÄ¬ÈÏÏÔÊ¾£¬ÒÔºó¾Í¼ì¸ÃÖµ£¬¾ö¶¨ÊÇ·ñ½øÈëÒıµ¼½çÃæ»òµÇÂ¼½çÃæ
+    //æ˜¯å¦æ˜¾ç¤ºå¼•å¯¼ç•Œé¢ï¼Œç¬¬ä¸€æ¬¡é»˜è®¤æ˜¾ç¤ºï¼Œä»¥åå°±æ£€è¯¥å€¼ï¼Œå†³å®šæ˜¯å¦è¿›å…¥å¼•å¯¼ç•Œé¢æˆ–ç™»å½•ç•Œé¢
     private boolean isShow=false;
 
     private ViewPager mViewPage;
     private List<View> views;
     private ImageView[]  iviews;
 
-    //·ÅÖÃĞ¡È¦È¦µÄlayout
+    //æ”¾ç½®å°åœˆåœˆçš„layout
     private LinearLayout dot_layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,21 +43,21 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         initView();
 
-        //µÚÒ»´Î£¬ÒòÎª·µ»ØµÄÊÇÄ¬ÈÏÖµ£¬ËùÒÔÊÇfalse
+        //ç¬¬ä¸€æ¬¡ï¼Œå› ä¸ºè¿”å›çš„æ˜¯é»˜è®¤å€¼ï¼Œæ‰€ä»¥æ˜¯false
         if(isShow)
         {
-            //ÏÔÊ¾µÇÂ¼Ò³
+            //æ˜¾ç¤ºç™»å½•é¡µ
             showLogin();
         }else{
-            //ÏÔÊ¾Òıµ¼Ò³
+            //æ˜¾ç¤ºå¼•å¯¼é¡µ
             showGuide();
-            //¸ü¸ÄisShowµÄÖµ£¬ÈÃËüÏÂ´ÎÏÔÊ¾µÇÂ¼Ò³
+            //æ›´æ”¹isShowçš„å€¼ï¼Œè®©å®ƒä¸‹æ¬¡æ˜¾ç¤ºç™»å½•é¡µ
         }
     }
-    //³õÊ¼»¯ÊÓÍ¼
+    //åˆå§‹åŒ–è§†å›¾
     public void initView()
     {
-        //ÅĞ¶ÏÏÔÊ¾Òıµ¼½çÃæ»¹ÊÇµÇÂ¼½çÃæ
+        //åˆ¤æ–­æ˜¾ç¤ºå¼•å¯¼ç•Œé¢è¿˜æ˜¯ç™»å½•ç•Œé¢
 
         isShow=PreferenceUtil.getIsShow(this,PreferenceUtil.SHOW_GUIDE);
         mViewPage=(ViewPager)findViewById(R.id.viewPager);
@@ -70,24 +70,24 @@ public class MainActivity extends Activity {
         views.add(v1);
         views.add(v2);
         views.add(v3);
-        //´´½¨Ğ¡Ô²È¦ÊÓÍ¼
+        //åˆ›å»ºå°åœ†åœˆè§†å›¾
         iviews=new ImageView[views.size()];
         dot_layout=(LinearLayout)findViewById(R.id.dot_layout);
-        //¿ªÊ¼½»¸øshowGuide»­Í¼
+        //å¼€å§‹äº¤ç»™showGuideç”»å›¾
 
 
     }
 
-    //ÏÔÊ¾Òıµ¼Ò³
+    //æ˜¾ç¤ºç™»å½•é¡µ
     public void showLogin()
     {
-        //¿ÉÒÔÓÃintentĞ¯´øĞÅÏ¢¸æËß£¬Ó¦ÓÃÊÇ·ñ¸ù¾İÓÃ»§Ñ¡ÔñµÄ×Ô¶¯µÇÂ¼ºó£¬Ö±½Ó½øÈëÖ÷½çÃæ»òÊÇµÇÂ¼½çÃæ
+        //å¯ä»¥ç”¨intentæºå¸¦ä¿¡æ¯å‘Šè¯‰ï¼Œåº”ç”¨æ˜¯å¦æ ¹æ®ç”¨æˆ·é€‰æ‹©çš„è‡ªåŠ¨ç™»å½•åï¼Œç›´æ¥è¿›å…¥ä¸»ç•Œé¢æˆ–æ˜¯ç™»å½•ç•Œé¢
         Intent intent=new Intent(this,LoginActivity.class);
-        //intent.putExtra("Ö±½ÓµÇÂ¼",false);
+        //intent.putExtra("ç›´æ¥ç™»å½•",false);
         startActivity(intent);
         finish();
     }
-    //ÏÔÊ¾µÇÂ¼Ò³
+    //æ˜¾ç¤ºå¼•å¯¼é¡µ
     public void showGuide()
     {
           MViewPageAdapter madapter=new MViewPageAdapter(this,views);
@@ -95,15 +95,15 @@ public class MainActivity extends Activity {
           mViewPage.setOnPageChangeListener(madapter);
           drawCircle();
     }
-    //»­Ğ¡È¦È¦
+    //ç”»å°åœˆåœˆ
     public void  drawCircle()
     {
-        //»­Èı¸öĞ¡È¦È¦
+        //ç”»ä¸‰ä¸ªå°åœˆåœˆ
         for(int i=0;i<iviews.length;i++)
         {
             iviews[i]=new ImageView(this);
             if (i == 0) {
-                // Ä¬ÈÏÑ¡ÖĞµÚÒ»ÕÅÕÕÆ¬£¬ËùÒÔ½«µÚÒ»¸öĞ¡Ô²È¦±äÎªicon_carousel_02
+                // é»˜è®¤é€‰ä¸­ç¬¬ä¸€å¼ ç…§ç‰‡ï¼Œæ‰€ä»¥å°†ç¬¬ä¸€ä¸ªå°åœ†åœˆå˜ä¸ºicon_carousel_02
                 iviews[i].setImageResource(R.drawable.icon_carousel_02);
             } else {
                 iviews[i].setImageResource(R.drawable.icon_carousel_01);
@@ -115,9 +115,9 @@ public class MainActivity extends Activity {
         }
     }
 
-    //viewpageµÄÊÊÅäÆ÷
+    //viewpageçš„é€‚é…å™¨
     /**
-     * µ±ÄãÊµÏÖÒ»¸öPagerAdapter,Äã±ØĞëÖÁÉÙ¸²¸ÇÒÔÏÂ·½·¨:
+     * å½“ä½ å®ç°ä¸€ä¸ªPagerAdapter,ä½ å¿…é¡»è‡³å°‘è¦†ç›–ä»¥ä¸‹æ–¹æ³•:
      instantiateItem(ViewGroup, int)
      destroyItem(ViewGroup, int, Object)
      getCount()
@@ -126,12 +126,12 @@ public class MainActivity extends Activity {
     public  class MViewPageAdapter extends PagerAdapter implements ViewPager.OnPageChangeListener{
         private List<View> mviews;
         private Activity context;
-        private Button button;//¿ªÊ¼Ê¹ÓÃµÄbutton
+        private Button button;//å¼€å§‹ä½¿ç”¨çš„button
         public MViewPageAdapter (Activity context ,List<View> mviews)
         {
             this.context=context;
             this.mviews=mviews;
-            Log.v("ÊÊÅäÆ÷-----","ÎÒµÄÊÊÅäÆ÷");
+            Log.v("é€‚é…å™¨-----","æˆ‘çš„é€‚é…å™¨");
         }
         @Override
         public int getCount() {
@@ -153,15 +153,15 @@ public class MainActivity extends Activity {
         public Object instantiateItem(View container, int position) {
 
             ((ViewPager) container).addView(mviews.get(position));
-            //ÔÚÊ¾Àı»¯ÊÓÍ¼ºó£¬ÅĞ¶Ïµ±Ç°µÄÊÓÍ¼£¬²¢¼àÌı°´Å¥
+            //åœ¨ç¤ºä¾‹åŒ–è§†å›¾åï¼Œåˆ¤æ–­å½“å‰çš„è§†å›¾ï¼Œå¹¶ç›‘å¬æŒ‰é’®
             if(position==(mviews.size()-1))
             {
-                //ÔÚÕâÀï¼àÌı×îºóÒ»¸öÒ³ÃæµÄbutton
+                //åœ¨è¿™é‡Œç›‘å¬æœ€åä¸€ä¸ªé¡µé¢çš„button
                 Button button=(Button)findViewById(R.id.use_app);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //²¢ÉèÖÃisSHowÎªtrue
+                        //å¹¶è®¾ç½®isSHowä¸ºtrue
                         PreferenceUtil.setIsShow(context, PreferenceUtil.SHOW_GUIDE, true);
                         startActivity(new Intent(context, LoginActivity.class));
                         context.finish();
@@ -178,7 +178,7 @@ public class MainActivity extends Activity {
 
         }
         /**
-         * Ò³ÃæÓĞËù¸Ä±ä£¬Èç¹ûÊÇµ±Ç°Ò³Ãæ£¬½«Ğ¡Ô²È¦¸ÄÎªicon_carousel_02£¬ÆäËûÒ³ÃæÔò¸ÄÎªicon_carousel_01
+         * é¡µé¢æœ‰æ‰€æ”¹å˜ï¼Œå¦‚æœæ˜¯å½“å‰é¡µé¢ï¼Œå°†å°åœ†åœˆæ”¹ä¸ºicon_carousel_02ï¼Œå…¶ä»–é¡µé¢åˆ™æ”¹ä¸ºicon_carousel_01
          */
         @Override
         public void onPageSelected(int arg0) {
